@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import QCUtilitySwift
 
-class ViewController: UIViewController {
+class ViewController: CoreDataTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        supportDelete = true
     }
 
     override func didReceiveMemoryWarning() {
