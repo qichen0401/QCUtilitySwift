@@ -9,31 +9,36 @@
 import UIKit
 import CoreData
 
-class CoreDataTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+open class CoreDataTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    enum SectionTitleType {
+    public enum SectionTitleType {
         case none
         case name
         case index
     }
     
-    let cellReuseIdentifier = "reuseIdentifier"
+    public let cellReuseIdentifier = "reuseIdentifier"
 
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
-    var supportDelete = true
-    var sectionTitleType = SectionTitleType.index
+    public var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    public var supportDelete = true
+    public var sectionTitleType = SectionTitleType.index
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         registerForCellReuseIdentifier()
     }
     
-    func registerForCellReuseIdentifier() {
+    //overrider
+    open func registerForCellReuseIdentifier() {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
     }
     
-    func initializeFetchedResultsController(entityName: String, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?, cacheName: String?) {
+    public func initializeFetchedResultsController(entityName: String, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?) {
+        initializeFetchedResultsController(entityName: entityName, sortDescriptors: sortDescriptors, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil)
+    }
+    
+    public func initializeFetchedResultsController(entityName: String, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?, cacheName: String?) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         request.sortDescriptors = sortDescriptors
         
@@ -49,15 +54,16 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override open func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections!.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.sections![section].numberOfObjects
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //overrider
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
 
         // Configure the cell...
@@ -66,20 +72,21 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         return cell
     }
 
-    func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
+    //overrider
+    open func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
 //        let object = fetchedResultsController.object(at: indexPath) as! SomeClass
         // Populate cell from the NSManagedObject instance
 //        print("Object for configuration: \(object)")
     }
     
     // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    override open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return supportDelete
     }
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             let object = fetchedResultsController.object(at: indexPath) as! NSManagedObject
@@ -90,7 +97,7 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         }    
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionInfo = fetchedResultsController.sections![section]
         switch sectionTitleType {
         case .none:
@@ -102,7 +109,7 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+    override open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         if sectionTitleType == .index {
             return fetchedResultsController.sectionIndexTitles
         } else {
@@ -110,19 +117,19 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
-    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return fetchedResultsController.section(forSectionIndexTitle: title, at: index)
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         switch type {
         case .insert:
             tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
@@ -135,7 +142,7 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: .fade)
@@ -148,13 +155,13 @@ class CoreDataTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
 
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    public func saveContext () {
         let context = fetchedResultsController.managedObjectContext
         if context.hasChanges {
             do {
