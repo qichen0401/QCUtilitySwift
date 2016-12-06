@@ -1,0 +1,22 @@
+{
+  "name": "QCUtilitySwift",
+  "version": "0.1.0",
+  "summary": "A short description of QCUtilitySwift.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/QCUtilitySwift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Qi Chen": "qichen0401@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/QCUtilitySwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "QCUtilitySwift/Classes/**/*"
+}

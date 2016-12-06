@@ -1,0 +1,6 @@
+framework module Pods_QCUtilitySwift_Example {
+  umbrella header "Pods-QCUtilitySwift_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

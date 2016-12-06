@@ -1,0 +1,16 @@
+PODS:
+  - QCUtilitySwift (0.1.0)
+
+DEPENDENCIES:
+  - QCUtilitySwift (from `../`)
+
+EXTERNAL SOURCES:
+  QCUtilitySwift:
+    :path: ../
+
+SPEC CHECKSUMS:
+  QCUtilitySwift: e487632075a428a8cd5f39e356c49c9908636b8f
+
+PODFILE CHECKSUM: 2fa299eb67c8d5e3d6e33851b8410590f184944e
+
+COCOAPODS: 1.0.0
