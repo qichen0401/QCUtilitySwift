@@ -35,20 +35,23 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
     }
     
     public func initializeFetchedResultsController(entityName: String, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?) {
-        initializeFetchedResultsController(entityName: entityName, sortDescriptors: sortDescriptors, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil)
+        initializeFetchedResultsController(entityName: entityName, predicate: nil, sortDescriptors: sortDescriptors, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil)
     }
     
-    public func initializeFetchedResultsController(entityName: String, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?, cacheName: String?) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.sortDescriptors = sortDescriptors
+    public func initializeFetchedResultsController(entityName: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?, cacheName: String?) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = sortDescriptors
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: cacheName)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: cacheName)
         fetchedResultsController.delegate = self
-        
+    }
+    
+    public func performFetch() {
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            fatalError("Failed to initialize FetchedResultsController: \(error)")
+            fatalError("Failed to performFetch: \(error)")
         }
     }
 
