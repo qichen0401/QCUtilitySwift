@@ -9,13 +9,20 @@
 import UIKit
 import QCUtilitySwift
 
-class ViewController: CoreDataTableViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        supportDelete = true
+        
+        
+        let a = Date().string(dateStyle: .full, timeStyle: .none)
+        let d = Date()
+        
+        let c = d.dateOnly()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
