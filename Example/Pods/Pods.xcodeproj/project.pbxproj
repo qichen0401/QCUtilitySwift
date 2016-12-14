@@ -15,6 +15,7 @@
 		771C7307E7DB001E0FC9A735A089D318 /* QCUtilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A103C834E561CF960F63EE60AECCA163 /* QCUtilitySwift-dummy.m */; };
 		97A11921242336CA41489C0DBC4DF428 /* Pods-QCUtilitySwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D25DD4CDB0D06AD9121C4E77CE08CC93 /* Pods-QCUtilitySwift_Example-dummy.m */; };
 		C04986F61DF69ED300275366 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04986F51DF69ED300275366 /* CoreDataTableViewController.swift */; };
+		C0B1811F1E011AFA0085A5D6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1811E1E011AFA0085A5D6 /* DateExtension.swift */; };
 		C8DAD7D5BB9179C3BC20FB8CF9A7D81B /* QCUtilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 806E07B90D9B261A6F2AF409CE5B7500 /* QCUtilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E878C594532E04FC564A3DFEEC139455 /* Pods-QCUtilitySwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD5B909E1E4982478DCBBC2F60B6C137 /* Pods-QCUtilitySwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		B2C9F1616DF68E0497990E2327289AD7 /* Pods-QCUtilitySwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QCUtilitySwift_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B84D4A27834B21869CAE5348811446D0 /* Pods-QCUtilitySwift_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QCUtilitySwift_Example-resources.sh"; sourceTree = "<group>"; };
 		C04986F51DF69ED300275366 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
+		C0B1811E1E011AFA0085A5D6 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		CA7FA8DBF659026CE3DB85E8E2961BC9 /* QCUtilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QCUtilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		CCFD3084D9C619760062D7634F613DEC /* Pods_QCUtilitySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QCUtilitySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5B909E1E4982478DCBBC2F60B6C137 /* Pods-QCUtilitySwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QCUtilitySwift_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				C04986F51DF69ED300275366 /* CoreDataTableViewController.swift */,
+				C0B1811E1E011AFA0085A5D6 /* DateExtension.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				771C7307E7DB001E0FC9A735A089D318 /* QCUtilitySwift-dummy.m in Sources */,
+				C0B1811F1E011AFA0085A5D6 /* DateExtension.swift in Sources */,
 				C04986F61DF69ED300275366 /* CoreDataTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
