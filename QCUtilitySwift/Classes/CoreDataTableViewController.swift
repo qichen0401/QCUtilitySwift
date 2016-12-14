@@ -45,6 +45,8 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: cacheName)
         fetchedResultsController.delegate = self
+        
+        performFetch()
     }
     
     public func performFetch() {
