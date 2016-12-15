@@ -14,6 +14,7 @@
 		6EB548D1582C297A210D5CF05A9AC3E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		771C7307E7DB001E0FC9A735A089D318 /* QCUtilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A103C834E561CF960F63EE60AECCA163 /* QCUtilitySwift-dummy.m */; };
 		97A11921242336CA41489C0DBC4DF428 /* Pods-QCUtilitySwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D25DD4CDB0D06AD9121C4E77CE08CC93 /* Pods-QCUtilitySwift_Example-dummy.m */; };
+		C02B109C1E0235D100682771 /* UILocalNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02B109B1E0235D100682771 /* UILocalNotificationExtension.swift */; };
 		C04986F61DF69ED300275366 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04986F51DF69ED300275366 /* CoreDataTableViewController.swift */; };
 		C0B1811F1E011AFA0085A5D6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B1811E1E011AFA0085A5D6 /* DateExtension.swift */; };
 		C8DAD7D5BB9179C3BC20FB8CF9A7D81B /* QCUtilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 806E07B90D9B261A6F2AF409CE5B7500 /* QCUtilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +48,7 @@
 		A7A3238B4B13256EB568EBA094D8C872 /* Pods-QCUtilitySwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QCUtilitySwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B2C9F1616DF68E0497990E2327289AD7 /* Pods-QCUtilitySwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QCUtilitySwift_Tests-umbrella.h"; sourceTree = "<group>"; };
 		B84D4A27834B21869CAE5348811446D0 /* Pods-QCUtilitySwift_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QCUtilitySwift_Example-resources.sh"; sourceTree = "<group>"; };
+		C02B109B1E0235D100682771 /* UILocalNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalNotificationExtension.swift; sourceTree = "<group>"; };
 		C04986F51DF69ED300275366 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
 		C0B1811E1E011AFA0085A5D6 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		CA7FA8DBF659026CE3DB85E8E2961BC9 /* QCUtilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QCUtilitySwift-prefix.pch"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				C04986F51DF69ED300275366 /* CoreDataTableViewController.swift */,
 				C0B1811E1E011AFA0085A5D6 /* DateExtension.swift */,
+				C02B109B1E0235D100682771 /* UILocalNotificationExtension.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			files = (
 				771C7307E7DB001E0FC9A735A089D318 /* QCUtilitySwift-dummy.m in Sources */,
 				C0B1811F1E011AFA0085A5D6 /* DateExtension.swift in Sources */,
+				C02B109C1E0235D100682771 /* UILocalNotificationExtension.swift in Sources */,
 				C04986F61DF69ED300275366 /* CoreDataTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
