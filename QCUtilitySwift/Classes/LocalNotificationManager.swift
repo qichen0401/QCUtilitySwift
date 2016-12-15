@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocalNotificationManager: NSObject {
+public class LocalNotificationManager: NSObject {
     public class func registerDefaultUserNotificationSettings() {
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
     }
@@ -24,6 +24,6 @@ class LocalNotificationManager: NSObject {
     }
     
     public class func scheduleNotification(fireDate: Date, alertBody: String) {
-        UILocalNotification.scheduleNotification(fireDate: fireDate, repeatInterval: NSCalendar.Unit(rawValue: 0), alertBody: alertBody)
+        LocalNotificationManager.scheduleNotification(fireDate: fireDate, repeatInterval: NSCalendar.Unit(rawValue: 0), alertBody: alertBody)
     }
 }
