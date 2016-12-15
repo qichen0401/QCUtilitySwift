@@ -1,16 +1,16 @@
 //
-//  UILocalNotificationExtension.swift
+//  LocalNotificationManager.swift
 //  Pods
 //
 //  Created by Qi Chen on 12/15/16.
 //
 //
 
-import Foundation
+import UIKit
 
-extension UILocalNotification {
+class LocalNotificationManager: NSObject {
     public class func registerDefaultUserNotificationSettings() {
-    UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
     }
     
     public class func scheduleNotification(fireDate: Date, repeatInterval: NSCalendar.Unit, alertBody: String) {
