@@ -12,6 +12,7 @@ extension UILocalNotification {
     public class func registerDefaultUserNotificationSettings() {
     UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
     }
+    
     public class func scheduleNotification(fireDate: Date, repeatInterval: NSCalendar.Unit, alertBody: String) {
         let localNotification = UILocalNotification()
         localNotification.fireDate = fireDate
