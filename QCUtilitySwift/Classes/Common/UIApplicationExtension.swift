@@ -10,6 +10,6 @@ import Foundation
 
 extension UIApplication {
     public var rootViewController: UIViewController? {
-        return UIApplication.shared.windows.first?.rootViewController
+        return keyWindow?.rootViewController
     }
 }
