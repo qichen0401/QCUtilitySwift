@@ -9,7 +9,7 @@
 import Foundation
 
 extension UIAlertController {
-    public class func defaultAlert(title: String, message: String) {
+    public class func defaultAlert(title: String?, message: String?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
             
