@@ -58,8 +58,7 @@ public class RateAppManager: NSObject {
             alertController.addAction(alertAction1)
             alertController.addAction(alertAction2)
             alertController.addAction(alertAction3)
-            
-            UIApplication.shared.rootViewController?.present(alertController, animated: true, completion: nil)
+            UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
         }
     }
     
