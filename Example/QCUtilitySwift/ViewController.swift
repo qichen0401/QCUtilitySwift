@@ -9,12 +9,14 @@
 import UIKit
 import QCUtilitySwift
 
-class ViewController: UIViewController {
+class ViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        dataSource = [["aaa", "bbb"]]
         
         
         
@@ -26,9 +28,10 @@ class ViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
+        if let obj = object(at: indexPath) as? String {
+            cell.textLabel?.text = obj
+        }
     }
 
 }

@@ -19,6 +19,7 @@
 		C002387B1E08D85F00CD1C54 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238771E08D85F00CD1C54 /* DateExtension.swift */; };
 		C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */; };
 		C0C8DBE61E10E73B00242AE5 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8DBE51E10E73B00242AE5 /* UIAlertControllerExtension.swift */; };
+		C0C8DBF01E110BBE00242AE5 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */; };
 		C34C69B3F6FE94DA4C01B1A99BBAE782 /* Pods-QCUtilitySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2C9F1616DF68E0497990E2327289AD7 /* Pods-QCUtilitySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3D7D32631E4689AF389D398BEDDA96F /* Pods-QCUtilitySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F03A72FB6955081EDD07B65C782DD3 /* Pods-QCUtilitySwift_Tests-dummy.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		C00238771E08D85F00CD1C54 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		C0C8DBE51E10E73B00242AE5 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		CA7FA8DBF659026CE3DB85E8E2961BC9 /* QCUtilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QCUtilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CCFD3084D9C619760062D7634F613DEC /* Pods_QCUtilitySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QCUtilitySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C00238751E08D85F00CD1C54 /* Common */,
+				C0C8DBEE1E110BB100242AE5 /* TableViewController */,
 				853CCE67E5681BC6FF31F409F8309ACF /* RateAppManager.swift */,
 			);
 			path = Classes;
@@ -240,6 +243,14 @@
 				C0C8DBE51E10E73B00242AE5 /* UIAlertControllerExtension.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		C0C8DBEE1E110BB100242AE5 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */,
+			);
+			path = TableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +371,7 @@
 				B11D959B1FCA92808C2822B034F6FEB5 /* QCUtilitySwift-dummy.m in Sources */,
 				C002387B1E08D85F00CD1C54 /* DateExtension.swift in Sources */,
 				C0C8DBE61E10E73B00242AE5 /* UIAlertControllerExtension.swift in Sources */,
+				C0C8DBF01E110BBE00242AE5 /* BaseTableViewController.swift in Sources */,
 				C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */,
 				BE8B6F1554B43E3105A0F52EBD5BA806 /* RateAppManager.swift in Sources */,
 				C002387A1E08D85F00CD1C54 /* CoreDataTableViewController.swift in Sources */,
