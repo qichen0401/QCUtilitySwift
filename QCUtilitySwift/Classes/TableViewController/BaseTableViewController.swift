@@ -42,32 +42,12 @@ open class BaseTableViewController: UITableViewController {
             return false
         }
     }
+        
+    open var supportDelete = true
+    open var supportRearranging = true
     
-//    open var rawData: [Any]! {
-//        didSet {
-//            
-//        }
-//    }
-//    
-//    open var name = { (obj: Any) -> String in
-//        if let s = obj as? String {
-//            return s
-//        }
-//        return ""
-//    }
-//    
-//    open func aa() -> [[Any]] {
-//        
-//        var aaa = "aabc"
-//        
-//        aaa.
-//    }
-    
-    var supportDelete = true
-    var supportRearranging = true
-    
-    struct Constants {
-        static let reuseIdentifier = "reuseIdentifier"
+    public struct Constants {
+        public static let reuseIdentifier = "reuseIdentifier"
     }
     
     override open func viewDidLoad() {

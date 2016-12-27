@@ -18,6 +18,8 @@
 		C002387A1E08D85F00CD1C54 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238761E08D85F00CD1C54 /* CoreDataTableViewController.swift */; };
 		C002387B1E08D85F00CD1C54 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238771E08D85F00CD1C54 /* DateExtension.swift */; };
 		C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */; };
+		C0A26E1E1E11F93500F78BD8 /* SectionIndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A26E1D1E11F93500F78BD8 /* SectionIndexTableViewController.swift */; };
+		C0A26E201E11FDB600F78BD8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A26E1F1E11FDB600F78BD8 /* StringExtension.swift */; };
 		C0C8DBE61E10E73B00242AE5 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8DBE51E10E73B00242AE5 /* UIAlertControllerExtension.swift */; };
 		C0C8DBF01E110BBE00242AE5 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */; };
 		C34C69B3F6FE94DA4C01B1A99BBAE782 /* Pods-QCUtilitySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2C9F1616DF68E0497990E2327289AD7 /* Pods-QCUtilitySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +57,8 @@
 		C00238761E08D85F00CD1C54 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
 		C00238771E08D85F00CD1C54 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		C0A26E1D1E11F93500F78BD8 /* SectionIndexTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionIndexTableViewController.swift; sourceTree = "<group>"; };
+		C0A26E1F1E11FDB600F78BD8 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C0C8DBE51E10E73B00242AE5 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		CA7FA8DBF659026CE3DB85E8E2961BC9 /* QCUtilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QCUtilitySwift-prefix.pch"; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				C00238761E08D85F00CD1C54 /* CoreDataTableViewController.swift */,
+				C0A26E1F1E11FDB600F78BD8 /* StringExtension.swift */,
 				C00238771E08D85F00CD1C54 /* DateExtension.swift */,
 				C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */,
 				C0C8DBE51E10E73B00242AE5 /* UIAlertControllerExtension.swift */,
@@ -249,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */,
+				C0A26E1D1E11F93500F78BD8 /* SectionIndexTableViewController.swift */,
 			);
 			path = TableViewController;
 			sourceTree = "<group>";
@@ -372,6 +378,8 @@
 				C002387B1E08D85F00CD1C54 /* DateExtension.swift in Sources */,
 				C0C8DBE61E10E73B00242AE5 /* UIAlertControllerExtension.swift in Sources */,
 				C0C8DBF01E110BBE00242AE5 /* BaseTableViewController.swift in Sources */,
+				C0A26E1E1E11F93500F78BD8 /* SectionIndexTableViewController.swift in Sources */,
+				C0A26E201E11FDB600F78BD8 /* StringExtension.swift in Sources */,
 				C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */,
 				BE8B6F1554B43E3105A0F52EBD5BA806 /* RateAppManager.swift in Sources */,
 				C002387A1E08D85F00CD1C54 /* CoreDataTableViewController.swift in Sources */,
