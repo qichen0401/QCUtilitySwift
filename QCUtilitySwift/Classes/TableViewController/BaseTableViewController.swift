@@ -16,6 +16,56 @@ open class BaseTableViewController: UITableViewController {
         }
     }
     
+    open func object(at indexPath: IndexPath) -> Any {
+        return dataSource[indexPath.section][indexPath.row]
+    }
+    
+    open func insert(object:Any, at indexPath: IndexPath) {
+        dataSource[indexPath.section].insert(object, at: indexPath.row)
+    }
+    
+    open func removeObject(at indexPath: IndexPath) {
+        dataSource[indexPath.section].remove(at: indexPath.row)
+    }
+    
+    open func moveObject(from fromIndexPath: IndexPath, to toIndexPath:IndexPath) {
+        let obj = object(at: fromIndexPath)
+        removeObject(at: fromIndexPath)
+        insert(object: obj, at: toIndexPath)
+    }
+    
+    open func removeIfEmpty(section: Int) -> Bool {
+        if dataSource[section].count == 0 {
+            dataSource.remove(at: section)
+            return true
+        } else {
+            return false
+        }
+    }
+    
+//    open var rawData: [Any]! {
+//        didSet {
+//            
+//        }
+//    }
+//    
+//    open var name = { (obj: Any) -> String in
+//        if let s = obj as? String {
+//            return s
+//        }
+//        return ""
+//    }
+//    
+//    open func aa() -> [[Any]] {
+//        
+//        var aaa = "aabc"
+//        
+//        aaa.
+//    }
+    
+    var supportDelete = true
+    var supportRearranging = true
+    
     struct Constants {
         static let reuseIdentifier = "reuseIdentifier"
     }
@@ -41,7 +91,7 @@ open class BaseTableViewController: UITableViewController {
     }
 
     override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseIdentifier, for: indexPath)
 
         // Configure the cell...
         configure(cell, at: indexPath)
@@ -55,46 +105,44 @@ open class BaseTableViewController: UITableViewController {
 //            cell.textLabel?.text = obj
 //        }
     }
-    
-    open func object(at indexPath: IndexPath) -> Any {
-        return dataSource[indexPath.section][indexPath.row]
-    }
 
-    /*
     // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    override open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return supportDelete
     }
-    */
 
-    /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            removeObject(at: indexPath)
+            if removeIfEmpty(section: indexPath.section) {
+                tableView.deleteSections([indexPath.section], with: .fade)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
-    /*
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    override open func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        moveObject(from: fromIndexPath, to: to)
+        if removeIfEmpty(section: fromIndexPath.section) {
+            tableView.deleteSections([fromIndexPath.section], with: .fade)
+        }
     }
-    */
 
-    /*
     // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    override open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
-        return true
+        return supportRearranging
     }
-    */
 
-
+    override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
