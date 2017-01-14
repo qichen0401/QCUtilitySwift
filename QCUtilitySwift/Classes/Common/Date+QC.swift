@@ -1,5 +1,5 @@
 //
-//  DateExtension.swift
+//  Date+QC.swift
 //  Pods
 //
 //  Created by Qi Chen on 12/14/16.

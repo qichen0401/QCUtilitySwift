@@ -1,5 +1,5 @@
 //
-//  StringExtension.swift
+//  String+QC.swift
 //  Pods
 //
 //  Created by Qi Chen on 12/27/16.

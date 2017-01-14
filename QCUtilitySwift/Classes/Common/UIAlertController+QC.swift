@@ -1,5 +1,5 @@
 //
-//  UIAlertControllerExtension.swift
+//  UIAlertController+QC.swift
 //  Pods
 //
 //  Created by Qi Chen on 12/26/16.
