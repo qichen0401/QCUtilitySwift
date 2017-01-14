@@ -18,6 +18,8 @@ class ViewController: BaseTableViewController {
         
         dataSource = [["aaa", "bbb"]]
         
+        let data = FileManager.default.plist(fileName: "testFile")!
+        let tdata: Set = data as! Set<String>
         
         
         
