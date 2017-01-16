@@ -10,7 +10,7 @@ import Foundation
 import StoreKit
 
 extension SKProduct {
-    var formattedPrice: String {
+    open var formattedPrice: String {
         get {
             let numberFormatter = NumberFormatter()
             numberFormatter.formatterBehavior = .behavior10_4

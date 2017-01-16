@@ -24,6 +24,7 @@
 		C0B766CB1E29EC96000133C8 /* FileManager+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B766CA1E29EC96000133C8 /* FileManager+QC.swift */; };
 		C0C8DBE61E10E73B00242AE5 /* UIAlertController+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8DBE51E10E73B00242AE5 /* UIAlertController+QC.swift */; };
 		C0C8DBF01E110BBE00242AE5 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */; };
+		C0CAC97D1E2C665D00BFCED5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CAC97C1E2C665D00BFCED5 /* CoreDataManager.swift */; };
 		C0D4B8391E2A16F900D3E3B2 /* SKProduct+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4B8381E2A16F900D3E3B2 /* SKProduct+QC.swift */; };
 		C34C69B3F6FE94DA4C01B1A99BBAE782 /* Pods-QCUtilitySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2C9F1616DF68E0497990E2327289AD7 /* Pods-QCUtilitySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3D7D32631E4689AF389D398BEDDA96F /* Pods-QCUtilitySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F03A72FB6955081EDD07B65C782DD3 /* Pods-QCUtilitySwift_Tests-dummy.m */; };
@@ -66,6 +67,7 @@
 		C0B766CA1E29EC96000133C8 /* FileManager+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+QC.swift"; sourceTree = "<group>"; };
 		C0C8DBE51E10E73B00242AE5 /* UIAlertController+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+QC.swift"; sourceTree = "<group>"; };
 		C0C8DBEF1E110BBE00242AE5 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		C0CAC97C1E2C665D00BFCED5 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C0D4B8381E2A16F900D3E3B2 /* SKProduct+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+QC.swift"; sourceTree = "<group>"; };
 		CA7FA8DBF659026CE3DB85E8E2961BC9 /* QCUtilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QCUtilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -221,6 +223,7 @@
 			children = (
 				C00238751E08D85F00CD1C54 /* Common */,
 				C0C8DBEE1E110BB100242AE5 /* TableViewController */,
+				C0CAC9791E2C613900BFCED5 /* CoreData */,
 				C0B766C71E29C39E000133C8 /* Store */,
 				853CCE67E5681BC6FF31F409F8309ACF /* RateAppManager.swift */,
 			);
@@ -274,6 +277,14 @@
 				C0A26E211E12315E00F78BD8 /* CoreDataTableViewController.swift */,
 			);
 			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		C0CAC9791E2C613900BFCED5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C0CAC97C1E2C665D00BFCED5 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +418,7 @@
 				C0B766C91E29C47D000133C8 /* StoreManager.swift in Sources */,
 				BE8B6F1554B43E3105A0F52EBD5BA806 /* RateAppManager.swift in Sources */,
 				C0A26E221E12315E00F78BD8 /* CoreDataTableViewController.swift in Sources */,
+				C0CAC97D1E2C665D00BFCED5 /* CoreDataManager.swift in Sources */,
 				C0D4B8391E2A16F900D3E3B2 /* SKProduct+QC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
