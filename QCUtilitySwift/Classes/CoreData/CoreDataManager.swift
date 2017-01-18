@@ -15,7 +15,7 @@ open class CoreDataManager: NSObject {
     
     private static var name:String!
     
-    open func setup(name: String) {
+    open class func setup(name: String) {
         CoreDataManager.name = name
     }
     
