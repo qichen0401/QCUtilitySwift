@@ -35,8 +35,8 @@ open class StoreManager: NSObject, SKPaymentTransactionObserver, SKProductsReque
     open static let shared = StoreManager()
     
     public struct NotificationName {
-        static let UnlockFunctionality = "UnlockFunctionalityNotification"
-        static let ProductRequest = "ProductRequestNotification"
+        public static let UnlockFunctionality = "UnlockFunctionalityNotification"
+        public static let ProductRequest = "ProductRequestNotification"
     }
     
     open var products: [SKProduct] = [] {
@@ -113,7 +113,9 @@ open class StoreManager: NSObject, SKPaymentTransactionObserver, SKProductsReque
     public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         products = response.products
         
-        print("Invalid Product Identifiers: \(response.invalidProductIdentifiers)")
+        if response.invalidProductIdentifiers.count > 0 {
+            print("Invalid Product Identifiers: \(response.invalidProductIdentifiers)")
+        }
         
         ready = true
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName.ProductRequest), object: self)
