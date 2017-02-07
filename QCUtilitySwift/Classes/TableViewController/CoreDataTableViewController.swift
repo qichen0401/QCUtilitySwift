@@ -19,7 +19,18 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
     
     public let cellReuseIdentifier = "reuseIdentifier"
 
-    public var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    public var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>! {
+        didSet {
+            fetchedResultsController.delegate = self
+            performFetch()
+        }
+    }
+    /*
+     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "entityName")
+     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "key", ascending: true)]
+     
+     fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.shared.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+     */
     public var supportDelete = true
     public var sectionTitleType = SectionTitleType.index
     
@@ -32,21 +43,6 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
     //overrider
     open func registerForCellReuseIdentifier() {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-    }
-    
-    public func initializeFetchedResultsController(entityName: String, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?) {
-        initializeFetchedResultsController(entityName: entityName, predicate: nil, sortDescriptors: sortDescriptors, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil)
-    }
-    
-    public func initializeFetchedResultsController(entityName: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor], managedObjectContext: NSManagedObjectContext, sectionNameKeyPath: String?, cacheName: String?) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = sortDescriptors
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: sectionNameKeyPath, cacheName: cacheName)
-        fetchedResultsController.delegate = self
-        
-        performFetch()
     }
     
     public func performFetch() {
@@ -79,9 +75,11 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
 
     //overrider
     open func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
-//        let object = fetchedResultsController.object(at: indexPath) as! SomeClass
+        /*
+        let object = fetchedResultsController.object(at: indexPath) as! SomeClass
         // Populate cell from the NSManagedObject instance
-//        print("Object for configuration: \(object)")
+        print("Object for configuration: \(object)")
+         */
     }
     
     // Override to support conditional editing of the table view.
