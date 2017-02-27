@@ -15,9 +15,7 @@ extension AVCaptureSession {
         do {
             if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) {
                 let deviceInput = try AVCaptureDeviceInput(device: device)
-                if session.canAddInput(deviceInput) {
-                    session.addInput(deviceInput)
-                }
+                session.checkAndAddInput(input: deviceInput)
             }
         } catch {
             print(error)
@@ -32,10 +30,40 @@ extension AVCaptureSession {
         }
     }
     
+    open func checkAndAddInput(input: AVCaptureInput) {
+        if self.canAddInput(input) {
+            self.addInput(input)
+        }
+    }
+    
     open func checkAndAddOutput(output: AVCaptureOutput) {
         if self.canAddOutput(output) {
             self.addOutput(output)
         }
+    }
+    
+    open func switchToCamera(withPosition position: AVCaptureDevicePosition) {
+        for input in self.inputs {
+            self.removeInput(input as! AVCaptureInput)
+        }
+        
+        let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as! [AVCaptureDevice]
+        
+        for device in devices {
+            if device.position == position {
+                do {
+                    let deviceInput = try AVCaptureDeviceInput(device: device)
+                    self.checkAndAddInput(input: deviceInput)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    open func switchCamera() {
+        let input = self.inputs.first as! AVCaptureDeviceInput
+        self.switchToCamera(withPosition: (input.device.position == .back) ? .front : .back)
     }
     
 }
