@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 
 extension AVCaptureSession {
-    open class func session(withMediaType mediaType: String!) -> AVCaptureSession {
+    open class func videoSession() -> AVCaptureSession {
         let session = AVCaptureSession()
         do {
             if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) {
@@ -27,8 +27,15 @@ extension AVCaptureSession {
     
     open func configureVideoPreview(withView view: UIView!) {
         if let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: self) {
-            videoPreviewLayer.frame = view.frame
+            videoPreviewLayer.frame = view.bounds
             view.layer.addSublayer(videoPreviewLayer)
         }
     }
+    
+    open func checkAndAddOutput(output: AVCaptureOutput) {
+        if self.canAddOutput(output) {
+            self.addOutput(output)
+        }
+    }
+    
 }
