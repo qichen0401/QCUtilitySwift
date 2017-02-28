@@ -61,9 +61,13 @@ extension AVCaptureSession {
         }
     }
     
-    open func switchCamera() {
+    open func cameraPosition() -> AVCaptureDevicePosition {
         let input = self.inputs.first as! AVCaptureDeviceInput
-        self.switchToCamera(withPosition: (input.device.position == .back) ? .front : .back)
+        return input.device.position
+    }
+    
+    open func switchCamera() {
+        self.switchToCamera(withPosition: (self.cameraPosition() == .back) ? .front : .back)
     }
     
 }
