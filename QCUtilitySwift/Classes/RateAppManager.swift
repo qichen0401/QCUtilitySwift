@@ -39,7 +39,7 @@ public class RateAppManager: NSObject {
         userDefaults.set(openCount + 1, forKey: defaultValues.openCountKey)
         userDefaults.synchronize()
         
-        if openCount > RateAppManager.fireCount {
+        if openCount >= RateAppManager.fireCount {
             let alertController = UIAlertController(title: "Please Rate Me!", message: "Thank you in advance.", preferredStyle: .alert)
             let alertAction1 = UIAlertAction(title: "Rate now", style: .default) { _ in
                 userDefaults.set(-1, forKey: defaultValues.openCountKey)
