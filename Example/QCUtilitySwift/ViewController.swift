@@ -15,11 +15,11 @@ class ViewController: BaseTableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        dataSource = []
+//        dataSource = [["aaa", "bbb"]]
         
-        dataSource = [["aaa", "bbb"]]
-        
-        let data = FileManager.default.plist(fileName: "testFile")!
-        let tdata: Set = data as! Set<String>
+//        let data = FileManager.default.plist(fileName: "testFile")!
+//        let tdata: Set = data as! Set<String>
         
         
         

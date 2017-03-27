@@ -35,7 +35,8 @@ open class BaseTableViewController: UITableViewController {
     }
     
     open func removeIfEmpty(section: Int) -> Bool {
-        if dataSource[section].count == 0 {
+        //only remove enpty section when there are over 1 section
+        if dataSource.count > 1, dataSource[section].count == 0 {
             dataSource.remove(at: section)
             return true
         } else {
@@ -97,11 +98,14 @@ open class BaseTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             removeObject(at: indexPath)
-            if removeIfEmpty(section: indexPath.section) {
-                tableView.deleteSections([indexPath.section], with: .fade)
-            } else {
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
+            
+            _ = removeIfEmpty(section: indexPath.section)
+            
+//            if removeIfEmpty(section: indexPath.section) {
+//                tableView.deleteSections([indexPath.section], with: .fade)
+//            } else {
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
