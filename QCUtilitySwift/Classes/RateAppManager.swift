@@ -20,7 +20,7 @@ public class RateAppManager: NSObject {
     
     public func start(appId id: String) {
         RateAppManager.appId = id
-        NotificationCenter.default.addObserver(self, selector: "updateOpenCount", name: .UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RateAppManager.updateOpenCount), name: .UIApplicationWillEnterForeground, object: nil)
         
         updateOpenCount()
     }
@@ -32,7 +32,7 @@ public class RateAppManager: NSObject {
     
     public func updateOpenCount() {
         let userDefaults = UserDefaults.standard
-        var openCount = userDefaults.integer(forKey: defaultValues.openCountKey)
+        let openCount = userDefaults.integer(forKey: defaultValues.openCountKey)
         if openCount == -1 {
             return
         }

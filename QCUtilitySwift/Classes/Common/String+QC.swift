@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     public func pinYin() -> String {
-        var s = CFStringCreateMutableCopy(nil, 0, self as CFString!)!
+        let s = CFStringCreateMutableCopy(nil, 0, self as CFString!)!
         CFStringTransform(s, nil, kCFStringTransformToLatin, false)
         CFStringTransform(s, nil, kCFStringTransformStripCombiningMarks, false)
         return s as String
