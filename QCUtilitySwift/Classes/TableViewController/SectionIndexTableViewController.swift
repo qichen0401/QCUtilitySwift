@@ -56,13 +56,13 @@ open class SectionIndexTableViewController: BaseTableViewController {
     }
 
     open override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return name(dataSource[section].first).sectionTitle()
+        return name(dataSource[section].first!).sectionTitle()
     }
 
     open override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         var sectionIndexTitles: [String] = []
         for section in dataSource {
-            sectionIndexTitles.append(name(section.first).sectionTitle())
+            sectionIndexTitles.append(name(section.first!).sectionTitle())
         }
         return sectionIndexTitles
     }

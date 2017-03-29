@@ -132,7 +132,9 @@ open class StoreManager: NSObject, SKPaymentTransactionObserver, SKProductsReque
                 print("deferred")
             case .failed:
                 print("failed")
-                print("\(transaction.error?.localizedDescription)")
+                if let error = transaction.error {
+                    print("\(error.localizedDescription)")
+                }
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .purchased:
                 print("purchased")
@@ -140,8 +142,6 @@ open class StoreManager: NSObject, SKPaymentTransactionObserver, SKProductsReque
             case .restored:
                 print("restored")
                 complete(transaction)
-            default:
-                print("Unexpected transaction state \(transaction.transactionState)")
             }
         }
     }

@@ -9,14 +9,16 @@
 import UIKit
 import QCUtilitySwift
 
-class ViewController: BaseTableViewController {
+class ViewController: SectionIndexTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        dataSource = []
-//        dataSource = [["aaa", "bbb"]]
+//        dataSource = []
+//        rawData = ["aaa", "bbb"]
+
+        rawData = []
         
 //        let data = FileManager.default.plist(fileName: "testFile")!
 //        let tdata: Set = data as! Set<String>
