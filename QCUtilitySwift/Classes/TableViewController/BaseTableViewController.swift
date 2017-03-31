@@ -35,8 +35,7 @@ open class BaseTableViewController: UITableViewController {
     }
     
     open func removeIfEmpty(section: Int) -> Bool {
-        //only remove enpty section when there are over 1 section
-        if dataSource.count > 1, dataSource[section].count == 0 {
+        if dataSource[section].count == 0 {
             dataSource.remove(at: section)
             return true
         } else {
@@ -97,15 +96,17 @@ open class BaseTableViewController: UITableViewController {
     override open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            tableView.beginUpdates()
+            
             removeObject(at: indexPath)
             
-            _ = removeIfEmpty(section: indexPath.section)
+            if removeIfEmpty(section: indexPath.section) {
+                tableView.deleteSections([indexPath.section], with: .fade)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
             
-//            if removeIfEmpty(section: indexPath.section) {
-//                tableView.deleteSections([indexPath.section], with: .fade)
-//            } else {
-//                tableView.deleteRows(at: [indexPath], with: .fade)
-//            }
+            tableView.endUpdates()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -113,10 +114,14 @@ open class BaseTableViewController: UITableViewController {
 
     // Override to support rearranging the table view.
     override open func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        tableView.beginUpdates()
+        
         moveObject(from: fromIndexPath, to: to)
         if removeIfEmpty(section: fromIndexPath.section) {
             tableView.deleteSections([fromIndexPath.section], with: .fade)
         }
+        
+        tableView.endUpdates()
     }
 
     // Override to support conditional rearranging of the table view.
