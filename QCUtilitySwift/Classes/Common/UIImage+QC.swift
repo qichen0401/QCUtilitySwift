@@ -40,4 +40,27 @@ extension UIImage {
         return nil
     }
     
+    public class func image(withQRCodeInputMessage inputMessage: String, size: CGSize) -> UIImage {
+        let inputMessageData = inputMessage.data(using: String.Encoding.utf8)!
+        let filter = CIFilter(name: "CIQRCodeGenerator", withInputParameters: ["inputMessage" : inputMessageData])!
+        let outputImage = filter.outputImage!
+        return UIImage(ciImage: outputImage).scale(to: size, interpolationQuality: .none)
+    }
+    
+    public func scale(to size: CGSize) -> UIImage {
+        return self.scale(to: size, interpolationQuality: .default)
+    }
+    
+    public func scale(to size: CGSize, interpolationQuality quality: CGInterpolationQuality) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        UIGraphicsGetCurrentContext()!.interpolationQuality = quality
+        self.draw(in: CGRect(origin: .zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
+    
+    
 }
