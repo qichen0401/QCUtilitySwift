@@ -17,12 +17,18 @@ extension UIImage {
         self.init(cgImage: cgImage!)
     }
     
+    public func redraw() -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        self.draw(at: .zero)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
     public func write(to url: URL) {
         do {
-            UIGraphicsBeginImageContext(size)
-            self.draw(at: .zero)
-            let image = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
+            let image = self.redraw()
             
             try UIImagePNGRepresentation(image)?.write(to: url)
         } catch {
