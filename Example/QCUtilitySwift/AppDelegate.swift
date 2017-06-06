@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        RateAppManager.shared.start(appId: "abc", fireCount: 2)
+//        RateAppManager.shared.start(appId: "abc", fireCount: 2)
+        
+        ReviewManager.shared.start()
         
         
         return true

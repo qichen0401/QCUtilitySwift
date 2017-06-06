@@ -6,6 +6,12 @@
 //
 //
 
+/*
+ Deprecated
+ 
+ Use ReviewManager instead
+ */
+
 import UIKit
 
 public class RateAppManager: NSObject {
