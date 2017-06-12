@@ -15,4 +15,20 @@ extension String {
         CFStringTransform(s, nil, kCFStringTransformStripCombiningMarks, false)
         return s as String
     }
+    
+    // MARK: - UITableViewController
+    
+    public func sectionTitle() -> String {
+        let sectionTitles = UILocalizedIndexedCollation.current().sectionTitles
+        if self.isEmpty {
+            return sectionTitles.last!
+        }
+        let pinYinString = self.pinYin()
+        let firstCharacter = pinYinString.substring(to: pinYinString.index(after: pinYinString.startIndex)).uppercased()
+        if sectionTitles.contains(firstCharacter) {
+            return firstCharacter
+        } else {
+            return sectionTitles.last!
+        }
+    }
 }
