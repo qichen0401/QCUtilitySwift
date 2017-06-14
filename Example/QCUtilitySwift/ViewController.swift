@@ -9,16 +9,18 @@
 import UIKit
 import QCUtilitySwift
 
-class ViewController: SectionIndexTableViewController {
+class ViewController: BaseTableViewController {
 
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
 //        dataSource = []
 //        rawData = ["aaa", "bbb"]
 
-        rawData = []
+//        rawData = []
         
 //        let data = FileManager.default.plist(fileName: "testFile")!
 //        let tdata: Set = data as! Set<String>
@@ -30,7 +32,9 @@ class ViewController: SectionIndexTableViewController {
 //        
 //        let c = d.dateOnly()
         
-        
+        let vi = UIImageView(image: UIImage(named: "test"))
+        vi.frame = view.frame
+//        emptyTableFooterView = vi
     }
 
     override func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {

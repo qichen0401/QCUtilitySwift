@@ -10,9 +10,19 @@ import UIKit
 
 open class BaseTableViewController: UITableViewController {
 
-    open var dataSource: [[Any]]! {
+    open var dataSource: [[Any]] = [] {
         didSet {
             tableView.reloadData()
+            
+            configureTableFooterView()
+        }
+    }
+    
+    open var emptyTableFooterView: UIView? {
+        didSet {
+            emptyTableFooterView?.frame = self.view.bounds
+            
+            configureTableFooterView()
         }
     }
     
@@ -54,6 +64,16 @@ open class BaseTableViewController: UITableViewController {
         super.viewDidLoad()
         
         registerForCellReuseIdentifier()
+        
+        configureTableFooterView()
+    }
+    
+    func configureTableFooterView() {
+        if dataSource.isEmpty {
+            tableView.tableFooterView = emptyTableFooterView ?? UIView()
+        } else {
+            tableView.tableFooterView = UIView()
+        }
     }
     
     open func registerForCellReuseIdentifier() {
