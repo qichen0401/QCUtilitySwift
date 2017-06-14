@@ -32,9 +32,6 @@ class ViewController: DataSourceTableViewController {
 //        
 //        let c = d.dateOnly()
         
-        let vi = UIImageView(image: UIImage(named: "test"))
-        vi.frame = view.frame
-        emptyTableFooterView = vi
     }
 
     override func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {

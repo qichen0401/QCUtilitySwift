@@ -13,8 +13,6 @@ open class DataSourceTableViewController: BaseTableViewController {
     open var dataSource: [[Any]] = [] {
         didSet {
             tableView.reloadData()
-            
-            configureTableFooterView()
         }
     }
     
