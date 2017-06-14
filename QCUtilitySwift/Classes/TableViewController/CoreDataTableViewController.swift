@@ -9,15 +9,13 @@
 import UIKit
 import CoreData
 
-open class CoreDataTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+open class CoreDataTableViewController: BaseTableViewController, NSFetchedResultsControllerDelegate {
     
     public enum SectionTitleType {
         case none
         case name
         case index
     }
-    
-    public let cellReuseIdentifier = "reuseIdentifier"
 
     public var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>! {
         didSet {
@@ -33,17 +31,6 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
      */
     public var supportDelete = true
     public var sectionTitleType = SectionTitleType.index
-    
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        
-        registerForCellReuseIdentifier()
-    }
-    
-    //overrider
-    open func registerForCellReuseIdentifier() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-    }
     
     public func performFetch() {
         do {
@@ -64,17 +51,7 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
     }
 
     //overrider
-    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
-
-        // Configure the cell...
-        configure(cell, at: indexPath)
-
-        return cell
-    }
-
-    //overrider
-    open func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
+    open override func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
         /*
         let object = fetchedResultsController.object(at: indexPath) as! SomeClass
         // Populate cell from the NSManagedObject instance
@@ -97,7 +74,7 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
             saveContext()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
 
     override open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -122,10 +99,6 @@ open class CoreDataTableViewController: UITableViewController, NSFetchedResultsC
     
     override open func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return fetchedResultsController.section(forSectionIndexTitle: title, at: index)
-    }
-    
-    override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

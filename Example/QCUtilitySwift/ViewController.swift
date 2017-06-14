@@ -9,7 +9,7 @@
 import UIKit
 import QCUtilitySwift
 
-class ViewController: BaseTableViewController {
+class ViewController: DataSourceTableViewController {
 
     override func viewDidLoad() {
         
@@ -34,7 +34,7 @@ class ViewController: BaseTableViewController {
         
         let vi = UIImageView(image: UIImage(named: "test"))
         vi.frame = view.frame
-//        emptyTableFooterView = vi
+        emptyTableFooterView = vi
     }
 
     override func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {

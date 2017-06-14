@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class SectionIndexTableViewController: BaseTableViewController {
+open class SectionIndexDataSourceTableViewController: DataSourceTableViewController {
 
     open var rawData: [Any]! {
         didSet {
@@ -47,12 +47,6 @@ open class SectionIndexTableViewController: BaseTableViewController {
             }
         }
         dataSource = ds
-    }
-
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     open override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
