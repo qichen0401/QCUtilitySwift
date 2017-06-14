@@ -18,8 +18,6 @@ open class BaseTableViewController: UITableViewController {
         super.viewDidLoad()
         
         registerForCellReuseIdentifier()
-        
-        tableView.tableFooterView = UIView()
     }
     
     open func registerForCellReuseIdentifier() {
