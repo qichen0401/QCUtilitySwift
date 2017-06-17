@@ -18,6 +18,7 @@
 		C002387B1E08D85F00CD1C54 /* Date+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238771E08D85F00CD1C54 /* Date+QC.swift */; };
 		C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */; };
 		C01747F71E63C56200ACABFA /* UIImage+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01747F61E63C56200ACABFA /* UIImage+QC.swift */; };
+		C039FF601EF53C3E00FC824D /* CGRect+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039FF5F1EF53C3E00FC824D /* CGRect+QC.swift */; };
 		C05970841EF0EB86005EC436 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05970831EF0EB86005EC436 /* BaseTableViewController.swift */; };
 		C0A26E1E1E11F93500F78BD8 /* SectionIndexDataSourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A26E1D1E11F93500F78BD8 /* SectionIndexDataSourceTableViewController.swift */; };
 		C0A26E201E11FDB600F78BD8 /* String+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A26E1F1E11FDB600F78BD8 /* String+QC.swift */; };
@@ -64,6 +65,7 @@
 		C00238771E08D85F00CD1C54 /* Date+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+QC.swift"; sourceTree = "<group>"; };
 		C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		C01747F61E63C56200ACABFA /* UIImage+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QC.swift"; sourceTree = "<group>"; };
+		C039FF5F1EF53C3E00FC824D /* CGRect+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+QC.swift"; sourceTree = "<group>"; };
 		C05970831EF0EB86005EC436 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		C0A26E1D1E11F93500F78BD8 /* SectionIndexDataSourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionIndexDataSourceTableViewController.swift; sourceTree = "<group>"; };
 		C0A26E1F1E11FDB600F78BD8 /* String+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QC.swift"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		C00238751E08D85F00CD1C54 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C039FF5F1EF53C3E00FC824D /* CGRect+QC.swift */,
 				C0A26E1F1E11FDB600F78BD8 /* String+QC.swift */,
 				C00238771E08D85F00CD1C54 /* Date+QC.swift */,
 				C0C8DBE51E10E73B00242AE5 /* UIAlertController+QC.swift */,
@@ -427,6 +430,7 @@
 				C0B766CB1E29EC96000133C8 /* FileManager+QC.swift in Sources */,
 				C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */,
 				C05970841EF0EB86005EC436 /* BaseTableViewController.swift in Sources */,
+				C039FF601EF53C3E00FC824D /* CGRect+QC.swift in Sources */,
 				C0B766C91E29C47D000133C8 /* StoreManager.swift in Sources */,
 				BE8B6F1554B43E3105A0F52EBD5BA806 /* RateAppManager.swift in Sources */,
 				C0A26E221E12315E00F78BD8 /* CoreDataTableViewController.swift in Sources */,

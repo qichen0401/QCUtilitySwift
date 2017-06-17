@@ -20,6 +20,14 @@ class ViewController: DataSourceTableViewController {
 //        dataSource = []
 //        rawData = ["aaa", "bbb"]
 
+        
+        
+        
+        let testView = UIView(frame: CGRect(center: view.center, size: CGSize(width: 100, height: 100)))
+        testView.backgroundColor = UIColor.brown
+        self.view.addSubview(testView)
+        
+        
 //        rawData = []
         
 //        let data = FileManager.default.plist(fileName: "testFile")!
