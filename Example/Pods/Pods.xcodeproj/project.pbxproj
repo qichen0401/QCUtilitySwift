@@ -17,6 +17,10 @@
 		BE8B6F1554B43E3105A0F52EBD5BA806 /* RateAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853CCE67E5681BC6FF31F409F8309ACF /* RateAppManager.swift */; };
 		C002387B1E08D85F00CD1C54 /* Date+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238771E08D85F00CD1C54 /* Date+QC.swift */; };
 		C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */; };
+		C00AE52B1EFD1861004CA363 /* Int+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AE52A1EFD1861004CA363 /* Int+QC.swift */; };
+		C00AE52D1EFD1AF8004CA363 /* Double+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AE52C1EFD1AF8004CA363 /* Double+QC.swift */; };
+		C00AE52F1EFD1CC3004CA363 /* Float+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AE52E1EFD1CC3004CA363 /* Float+QC.swift */; };
+		C00AE5311EFD1D9D004CA363 /* CGFloat+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AE5301EFD1D9D004CA363 /* CGFloat+QC.swift */; };
 		C01747F71E63C56200ACABFA /* UIImage+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01747F61E63C56200ACABFA /* UIImage+QC.swift */; };
 		C039FF601EF53C3E00FC824D /* CGRect+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039FF5F1EF53C3E00FC824D /* CGRect+QC.swift */; };
 		C05970841EF0EB86005EC436 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05970831EF0EB86005EC436 /* BaseTableViewController.swift */; };
@@ -64,6 +68,10 @@
 		B84D4A27834B21869CAE5348811446D0 /* Pods-QCUtilitySwift_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QCUtilitySwift_Example-resources.sh"; sourceTree = "<group>"; };
 		C00238771E08D85F00CD1C54 /* Date+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+QC.swift"; sourceTree = "<group>"; };
 		C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		C00AE52A1EFD1861004CA363 /* Int+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+QC.swift"; sourceTree = "<group>"; };
+		C00AE52C1EFD1AF8004CA363 /* Double+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+QC.swift"; sourceTree = "<group>"; };
+		C00AE52E1EFD1CC3004CA363 /* Float+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+QC.swift"; sourceTree = "<group>"; };
+		C00AE5301EFD1D9D004CA363 /* CGFloat+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+QC.swift"; sourceTree = "<group>"; };
 		C01747F61E63C56200ACABFA /* UIImage+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QC.swift"; sourceTree = "<group>"; };
 		C039FF5F1EF53C3E00FC824D /* CGRect+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+QC.swift"; sourceTree = "<group>"; };
 		C05970831EF0EB86005EC436 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +275,10 @@
 				C0B766CA1E29EC96000133C8 /* FileManager+QC.swift */,
 				C01747F61E63C56200ACABFA /* UIImage+QC.swift */,
 				C00238781E08D85F00CD1C54 /* LocalNotificationManager.swift */,
+				C00AE52A1EFD1861004CA363 /* Int+QC.swift */,
+				C00AE52C1EFD1AF8004CA363 /* Double+QC.swift */,
+				C00AE52E1EFD1CC3004CA363 /* Float+QC.swift */,
+				C00AE5301EFD1D9D004CA363 /* CGFloat+QC.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -422,14 +434,18 @@
 				B11D959B1FCA92808C2822B034F6FEB5 /* QCUtilitySwift-dummy.m in Sources */,
 				C002387B1E08D85F00CD1C54 /* Date+QC.swift in Sources */,
 				C01747F71E63C56200ACABFA /* UIImage+QC.swift in Sources */,
+				C00AE52D1EFD1AF8004CA363 /* Double+QC.swift in Sources */,
 				C0C8DBE61E10E73B00242AE5 /* UIAlertController+QC.swift in Sources */,
 				C0C8DBF01E110BBE00242AE5 /* DataSourceTableViewController.swift in Sources */,
 				C0A26E1E1E11F93500F78BD8 /* SectionIndexDataSourceTableViewController.swift in Sources */,
 				C0AD20BD1EE6966A001A2DC2 /* ReviewManager.swift in Sources */,
 				C0A26E201E11FDB600F78BD8 /* String+QC.swift in Sources */,
 				C0B766CB1E29EC96000133C8 /* FileManager+QC.swift in Sources */,
+				C00AE52F1EFD1CC3004CA363 /* Float+QC.swift in Sources */,
+				C00AE5311EFD1D9D004CA363 /* CGFloat+QC.swift in Sources */,
 				C002387C1E08D85F00CD1C54 /* LocalNotificationManager.swift in Sources */,
 				C05970841EF0EB86005EC436 /* BaseTableViewController.swift in Sources */,
+				C00AE52B1EFD1861004CA363 /* Int+QC.swift in Sources */,
 				C039FF601EF53C3E00FC824D /* CGRect+QC.swift in Sources */,
 				C0B766C91E29C47D000133C8 /* StoreManager.swift in Sources */,
 				BE8B6F1554B43E3105A0F52EBD5BA806 /* RateAppManager.swift in Sources */,

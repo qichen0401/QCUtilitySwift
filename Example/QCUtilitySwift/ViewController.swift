@@ -21,6 +21,15 @@ class ViewController: DataSourceTableViewController {
 //        rawData = ["aaa", "bbb"]
 
         
+        print(Float.random)
+        print(Float.random)
+        print("*****")
+        print(Double.random)
+        print(Double.random)
+        print("*****")
+        print(CGFloat.random)
+        print(CGFloat.random)
+        
         
         
         let testView = UIView(frame: CGRect(center: view.center, size: CGSize(width: 100, height: 100)))
