@@ -15,4 +15,10 @@ extension UIView {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
+    
+    public func configureShapeMask(path: UIBezierPath) {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        self.layer.mask = shapeLayer
+    }
 }

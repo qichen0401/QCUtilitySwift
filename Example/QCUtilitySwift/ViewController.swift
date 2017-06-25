@@ -30,7 +30,11 @@ class ViewController: DataSourceTableViewController {
         print(CGFloat.random)
         print(CGFloat.random)
         
-        
+        print("*****")
+        print(UInt32.max)
+        print(Float(UInt32.max))
+        print(Double(UInt32.max))
+        print(CGFloat(UInt32.max))
         
         let testView = UIView(frame: CGRect(center: view.center, size: CGSize(width: 100, height: 100)))
         testView.backgroundColor = UIColor.brown
