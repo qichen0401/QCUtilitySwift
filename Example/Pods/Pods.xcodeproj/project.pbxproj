@@ -23,6 +23,8 @@
 		C00AE5311EFD1D9D004CA363 /* CGFloat+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AE5301EFD1D9D004CA363 /* CGFloat+QC.swift */; };
 		C01747F71E63C56200ACABFA /* UIImage+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01747F61E63C56200ACABFA /* UIImage+QC.swift */; };
 		C039FF601EF53C3E00FC824D /* CGRect+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C039FF5F1EF53C3E00FC824D /* CGRect+QC.swift */; };
+		C040D4D81F0387A400E86EB7 /* UIApplication+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C040D4D71F0387A400E86EB7 /* UIApplication+QC.swift */; };
+		C040D4DA1F0387B500E86EB7 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C040D4D91F0387B500E86EB7 /* GameCenterManager.swift */; };
 		C049F0C11F00F94E0013081C /* Array+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049F0BE1F00F94E0013081C /* Array+QC.swift */; };
 		C049F0C21F00F94E0013081C /* UIBezierPath+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049F0BF1F00F94E0013081C /* UIBezierPath+QC.swift */; };
 		C049F0C31F00F94E0013081C /* UIView+QC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049F0C01F00F94E0013081C /* UIView+QC.swift */; };
@@ -77,6 +79,8 @@
 		C00AE5301EFD1D9D004CA363 /* CGFloat+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+QC.swift"; sourceTree = "<group>"; };
 		C01747F61E63C56200ACABFA /* UIImage+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QC.swift"; sourceTree = "<group>"; };
 		C039FF5F1EF53C3E00FC824D /* CGRect+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+QC.swift"; sourceTree = "<group>"; };
+		C040D4D71F0387A400E86EB7 /* UIApplication+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+QC.swift"; sourceTree = "<group>"; };
+		C040D4D91F0387B500E86EB7 /* GameCenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		C049F0BE1F00F94E0013081C /* Array+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+QC.swift"; sourceTree = "<group>"; };
 		C049F0BF1F00F94E0013081C /* UIBezierPath+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+QC.swift"; sourceTree = "<group>"; };
 		C049F0C01F00F94E0013081C /* UIView+QC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+QC.swift"; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				C0B766C71E29C39E000133C8 /* Store */,
 				853CCE67E5681BC6FF31F409F8309ACF /* RateAppManager.swift */,
 				C0AD20BC1EE6966A001A2DC2 /* ReviewManager.swift */,
+				C040D4D91F0387B500E86EB7 /* GameCenterManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 		C00238751E08D85F00CD1C54 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C040D4D71F0387A400E86EB7 /* UIApplication+QC.swift */,
 				C049F0BE1F00F94E0013081C /* Array+QC.swift */,
 				C049F0BF1F00F94E0013081C /* UIBezierPath+QC.swift */,
 				C049F0C01F00F94E0013081C /* UIView+QC.swift */,
@@ -458,12 +464,14 @@
 				C00AE52B1EFD1861004CA363 /* Int+QC.swift in Sources */,
 				C049F0C21F00F94E0013081C /* UIBezierPath+QC.swift in Sources */,
 				C049F0C11F00F94E0013081C /* Array+QC.swift in Sources */,
+				C040D4DA1F0387B500E86EB7 /* GameCenterManager.swift in Sources */,
 				C039FF601EF53C3E00FC824D /* CGRect+QC.swift in Sources */,
 				C0B766C91E29C47D000133C8 /* StoreManager.swift in Sources */,
 				BE8B6F1554B43E3105A0F52EBD5BA806 /* RateAppManager.swift in Sources */,
 				C0A26E221E12315E00F78BD8 /* CoreDataTableViewController.swift in Sources */,
 				C0CAC97D1E2C665D00BFCED5 /* CoreDataManager.swift in Sources */,
 				C0D4B8391E2A16F900D3E3B2 /* SKProduct+QC.swift in Sources */,
+				C040D4D81F0387A400E86EB7 /* UIApplication+QC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
