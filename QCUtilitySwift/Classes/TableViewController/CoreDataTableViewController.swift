@@ -39,6 +39,15 @@ open class CoreDataTableViewController: BaseTableViewController, NSFetchedResult
             fatalError("Failed to performFetch: \(error)")
         }
     }
+    
+    public func object(for cell: UITableViewCell) -> NSFetchRequestResult? {
+        if let indexPath = tableView.indexPath(for: cell) {
+            let object = fetchedResultsController.object(at: indexPath)
+            return object
+        } else {
+            return nil
+        }
+    }
 
     // MARK: - Table view data source
 
