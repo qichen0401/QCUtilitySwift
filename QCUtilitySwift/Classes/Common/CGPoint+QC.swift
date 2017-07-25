@@ -16,4 +16,8 @@ extension CGPoint {
     public func minus(point: CGPoint) -> CGPoint {
         return CGPoint(x: x - point.x, y: y - point.y)
     }
+    
+    public func length() -> CGFloat {
+        return sqrt(x * x + y * y)
+    }
 }
