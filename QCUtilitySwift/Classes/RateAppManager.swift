@@ -36,7 +36,7 @@ public class RateAppManager: NSObject {
         start(appId: id)
     }
     
-    public func updateOpenCount() {
+    @objc public func updateOpenCount() {
         let userDefaults = UserDefaults.standard
         let openCount = userDefaults.integer(forKey: defaultValues.openCountKey)
         if openCount == -1 {

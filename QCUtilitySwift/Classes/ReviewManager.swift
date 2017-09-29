@@ -18,7 +18,7 @@ public class ReviewManager: NSObject {
     public static let shared = ReviewManager()
     public var fireCount = defaultValues.fireCount
     
-    public func count() {
+    @objc public func count() {
         let userDefaults = UserDefaults.standard
         
         var count = userDefaults.integer(forKey: defaultValues.countKey)

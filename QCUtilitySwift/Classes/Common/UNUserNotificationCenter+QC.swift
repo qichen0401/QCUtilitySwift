@@ -13,10 +13,10 @@ import UserNotifications
 extension UNUserNotificationCenter {
     public func requestDefaultAuthorization() {
         self.requestAuthorization(options: [.alert, .badge, .sound]) {
-            if !$0.0 {
+            if !$0 {
                 UIAlertController.defaultAlert(title: "Notifications Disabled", message: "Please enable notifications in the Settings app.")
             }
-            if let error = $0.1 {
+            if let error = $1 {
                 print(error.localizedDescription)
             }
         }
