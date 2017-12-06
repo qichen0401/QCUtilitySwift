@@ -68,6 +68,21 @@ extension UIImage {
         return image
     }
     
+    public func invertColors() -> UIImage {
+        let imageRect = CGRect(origin: .zero, size: self.size)
+        
+        UIGraphicsBeginImageContext(self.size)
+        let context = UIGraphicsGetCurrentContext()!
+        context.setBlendMode(.copy)
+        self.draw(in: imageRect)
+        context.setBlendMode(.difference)
+        context.setFillColor(UIColor.white.cgColor)
+        context.fill(imageRect)
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return resultImage
+    }
     
     
 }
