@@ -23,7 +23,7 @@ extension CGRect {
         self.init(origin: origin, size: size)
     }
     
-    public func ellipseContains(point: CGPoint) -> Bool {
+    public func ellipseContains(_ point: CGPoint) -> Bool {
         let x = point.x
         let y = point.y
         let h = self.center.x
