@@ -20,4 +20,12 @@ extension CGPoint {
     public func length() -> CGFloat {
         return sqrt(x * x + y * y)
     }
+    
+    public func distance(to point: CGPoint) -> CGFloat {
+        return self.minus(point: point).length()
+    }
+    
+    public func dotProduct(point: CGPoint) -> CGFloat {
+        return self.x*point.x + self.y*point.y
+    }
 }
