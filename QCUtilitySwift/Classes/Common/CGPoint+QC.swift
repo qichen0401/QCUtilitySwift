@@ -28,4 +28,30 @@ extension CGPoint {
     public func dotProduct(point: CGPoint) -> CGFloat {
         return self.x*point.x + self.y*point.y
     }
+    
+    public static func slope(point1: CGPoint, point2: CGPoint) -> CGFloat {
+        return (point2.y - point1.y)/(point2.x - point1.x)
+    }
+    
+    public static func angleOfVector(startPoint: CGPoint, endPoint: CGPoint) -> CGFloat {
+        let u = endPoint.minus(point: startPoint)
+        return atan2(u.y, u.x)
+    }
+    
+    public static func angle(vertex: CGPoint, point1: CGPoint, point2: CGPoint) -> CGFloat {
+        //        let u = point1.minus(point: vertex)
+        //        let v = point2.minus(point: vertex)
+        //        let angle = acos(u.dotProduct(point: v)/u.length()/v.length())
+        //        return angle
+        
+        //        let k1 = CGPoint.slope(point1: vertex, point2: point1)
+        //        let k2 = CGPoint.slope(point1: vertex, point2: point2)
+        //        let angle = atan((k1 - k2)/(1 + k1*k2))
+        //        return angle
+        
+        let u = point1.minus(point: vertex)
+        let v = point2.minus(point: vertex)
+        let angle = atan2(v.x*u.y - u.x*v.y, u.x*v.x + u.y*v.y)
+        return angle
+    }
 }
