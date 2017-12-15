@@ -22,6 +22,19 @@ extension UIView {
             ])
     }
     
+    @available(iOS 11.0, *)
+    public func fillSafeArea(in view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.removeConstraints(self.constraints)
+        let guide = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            guide.leftAnchor.constraint(equalTo: self.leftAnchor),
+            guide.rightAnchor.constraint(equalTo: self.rightAnchor),
+            guide.topAnchor.constraint(equalTo: self.topAnchor),
+            guide.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            ])
+    }
+    
     public func configureBorder(borderWidth: CGFloat, borderColor: CGColor, cornerRadius: CGFloat) {
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor
