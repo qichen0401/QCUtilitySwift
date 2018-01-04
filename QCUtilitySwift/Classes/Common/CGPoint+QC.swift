@@ -17,6 +17,10 @@ extension CGPoint {
         return CGPoint(x: x - point.x, y: y - point.y)
     }
     
+    public func multiple(number: CGFloat) -> CGPoint {
+        return CGPoint(x: x*number, y: y*number)
+    }
+    
     public func length() -> CGFloat {
         return sqrt(x * x + y * y)
     }
