@@ -10,6 +10,18 @@ import Foundation
 
 extension UIView {
     
+    @available(iOS 9.0, *)
+    public func fill(in layoutGuide: UILayoutGuide) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.removeConstraints(self.constraints)
+        NSLayoutConstraint.activate([
+            layoutGuide.leftAnchor.constraint(equalTo: self.leftAnchor),
+            layoutGuide.rightAnchor.constraint(equalTo: self.rightAnchor),
+            layoutGuide.topAnchor.constraint(equalTo: self.topAnchor),
+            layoutGuide.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            ])
+    }
+    
     @available(iOS 11.0, *)
     public func fill(in view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
