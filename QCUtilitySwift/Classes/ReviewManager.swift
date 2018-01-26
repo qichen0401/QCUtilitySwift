@@ -40,7 +40,6 @@ public class ReviewManager: NSObject {
     
     public func start() {
         NotificationCenter.default.addObserver(self, selector: #selector(ReviewManager.count), name: .UIApplicationWillEnterForeground, object: nil)
-        
         count()
     }
     
