@@ -23,14 +23,14 @@ extension UIView {
     }
     
     @available(iOS 11.0, *)
-    public func fill(in view: UIView) {
+    public func fill(in view: UIView, constant: CGFloat = 0) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.removeConstraints(self.constraints)
         NSLayoutConstraint.activate([
-            view.leftAnchor.constraint(equalTo: self.leftAnchor),
-            view.rightAnchor.constraint(equalTo: self.rightAnchor),
-            view.topAnchor.constraint(equalTo: self.topAnchor),
-            view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            view.leftAnchor.constraint(equalTo: self.leftAnchor, constant: -constant),
+            view.rightAnchor.constraint(equalTo: self.rightAnchor, constant: constant),
+            view.topAnchor.constraint(equalTo: self.topAnchor, constant: -constant),
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: constant),
             ])
     }
     
