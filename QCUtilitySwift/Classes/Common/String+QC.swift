@@ -31,4 +31,17 @@ extension String {
             return sectionTitles.last!
         }
     }
+    
+    // MARK: - draw
+    
+    public func drawAt(originX: CGFloat, centerY: CGFloat, withAttributes attrs: [NSAttributedStringKey : Any]? = nil) {
+        let size = self.size(withAttributes: attrs)
+        self.draw(at: CGPoint(x: originX, y: centerY - size.height/2), withAttributes: attrs)
+    }
+    
+    public func drawAt(centerX: CGFloat, originY: CGFloat, withAttributes attrs: [NSAttributedStringKey : Any]? = nil) {
+        let size = self.size(withAttributes: attrs)
+        self.draw(at: CGPoint(x: centerX - size.width/2, y: originY), withAttributes: attrs)
+    }
+
 }
