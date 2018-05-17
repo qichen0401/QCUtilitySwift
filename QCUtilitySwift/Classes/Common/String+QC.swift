@@ -44,4 +44,8 @@ extension String {
         self.draw(at: CGPoint(x: centerX - size.width/2, y: originY), withAttributes: attrs)
     }
 
+    public func drawAt(centerX: CGFloat, centerY: CGFloat, withAttributes attrs: [NSAttributedStringKey : Any]? = nil) {
+        let size = self.size(withAttributes: attrs)
+        self.draw(at: CGPoint(x: centerX - size.width/2, y: centerY - size.height/2), withAttributes: attrs)
+    }
 }
